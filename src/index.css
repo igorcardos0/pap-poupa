@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode - Clean and Professional */
+    --background: 0 0% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Vibrant teal accent - #4FD1C5 */
+    --primary: 174 56% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 45% 95%;
+    --secondary-foreground: 174 56% 25%;
+
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 174 56% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 174 56% 57%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 174 56% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 45% 95%;
+    --sidebar-accent-foreground: 174 56% 25%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 174 56% 57%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 56% 57%) 0%, hsl(174 56% 47%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 26%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(174 45% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-lg: 0 10px 30px -5px hsl(174 56% 57% / 0.1);
+    --shadow-card: 0 4px 12px -2px hsl(220 15% 50% / 0.08);
+  }
+
+  .dark {
+    /* Dark Mode - Modern and Sleek */
+    --background: 220 25% 10%;
+    --foreground: 220 10% 95%;
+
+    --card: 220 25% 13%;
+    --card-foreground: 220 10% 95%;
+
+    --popover: 220 25% 13%;
+    --popover-foreground: 220 10% 95%;
+
+    /* Vibrant teal accent - brighter in dark mode */
+    --primary: 174 56% 57%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 220 10% 95%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 174 56% 57%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 174 56% 57%;
+
+    --sidebar-background: 220 25% 13%;
+    --sidebar-foreground: 220 10% 95%;
+    --sidebar-primary: 174 56% 57%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 220 10% 95%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 174 56% 57%;
+
+    /* Custom gradients - darker versions */
+    --gradient-primary: linear-gradient(135deg, hsl(174 56% 57%) 0%, hsl(174 56% 47%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 45%) 0%, hsl(142 76% 35%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 25% 13%) 0%, hsl(220 25% 16%) 100%);
+    
+    /* Shadows - with glow effect */
+    --shadow-lg: 0 10px 30px -5px hsl(174 56% 57% / 0.2);
+    --shadow-card: 0 4px 12px -2px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-lg-custom {
+    box-shadow: var(--shadow-lg);
+  }
+}
